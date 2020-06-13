@@ -1,10 +1,18 @@
+###
+ # @Author: your name
+ # @Date: 2020-06-13 15:17:20
+ # @LastEditTime: 2020-06-13 23:04:52
+ # @LastEditors: Please set LastEditors
+ # @Description: In User Settings Edit
+ # @FilePath: \vuepresssBlog\deploy.sh
+### 
 #!/usr/bin/env sh
 
 # 确保脚本抛出遇到的错误
 set -e
 
 # 生成静态文件
-npm run build
+npm run docs:build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
@@ -17,7 +25,7 @@ git add -A
 git commit -m 'deploy'
 
 # 如果你想要部署到 https://USERNAME.github.io
-git push -f git@github.com:nan-gong/nan-gong.github.io.git master
+git push -f git@github.com:Olliverzhang/Olliverzhang.github.io.git
 
 # 如果发布到 https://USERNAME.github.io/<REPO>  REPO=github上的项目
 # git push -f git@github.com:USERNAME/<REPO>.git master:gh-pages
